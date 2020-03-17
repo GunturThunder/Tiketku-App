@@ -13,7 +13,7 @@ import OtpSessionScreen from './src/components/screen/Auth/OtpSession';
 import UpdatePasswordScreen from './src/components/screen/Auth/UpdatePassword';
 import HotelDetailScreen from './src/components/screen/Hotel/HotelDetail';
 import BookingListScreen from './src/components/screen/Booking/Book';
-import UserScreen from './src/components/screen/Account/User';
+// import UserScreen from './src/components/screen/Account/User';
 
 const homeNavigator = createStackNavigator({
   Home: {
