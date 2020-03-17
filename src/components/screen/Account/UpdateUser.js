@@ -12,14 +12,14 @@ const styles = StyleSheet.create({
   }
 })
 
-class Register extends Component {
+class UpdateUser extends Component {
     state = {
         name_user: '',
         email: '',
         address: '',
         gender: '',
         phone_number: '',
-        password: '',
+        // password: '',
         selected: 'Man',
         selected: 'Women'
     }
@@ -29,23 +29,22 @@ class Register extends Component {
         });
     }
 
-    onRegister = data => {
-        axios.post('http://192.168.1.39:8282/v1/user/register/', data).then(res => {
+    onUpdateUser = data => {
+        axios.post('http://192.168.1.39:8282/v1/user/', data).then(res => {
             alert('success')
             this.props.navigation.navigate('Login')
         })
     }
-
 
   render () {
     return (
       <View style={styles.wrap}>
         <View>
           <Image style={{ position: 'absolute' }} source={require('../../../img/icon/bg2.png')} />
-          <TouchableOpacity onPress={() => this.props.navigation.navigate('Login')}><Icon name='arrow-back' style={{ color: 'white', marginLeft: 20, marginTop: 20 }} /></TouchableOpacity>
+          <TouchableOpacity onPress={() => this.props.navigation.navigate('User')}><Icon name='arrow-back' style={{ color: 'white', marginLeft: 20, marginTop: 20 }} /></TouchableOpacity>
           <View style={{ alignItems: 'center' }}>
             <View style={{ flexDirection: 'row' }}>
-              <TouchableOpacity onPress={() => this.props.navigation.navigate('Register')}><Text style={{ color: 'white', fontSize: 21, marginLeft: 20, fontWeight: 'bold' }}>Sign Up</Text></TouchableOpacity>
+              <TouchableOpacity onPress={() => this.props.navigation.navigate('User')}><Text style={{ color: 'white', fontSize: 21, marginLeft: 20, fontWeight: 'bold' }}>Update User</Text></TouchableOpacity>
             </View>
           </View>
         </View>
@@ -77,15 +76,12 @@ class Register extends Component {
             <Item>
               <Input placeholder='Phone Number' placeholderTextColor='#414141' style={{ color: '#414141' }} keyboardType='numeric' onChangeText={text => this.setState({phone_number: text})} />
             </Item>
-            <Item>
-              <Input secureTextEntry placeholder='Password' placeholderTextColor='#414141' onChangeText={text => this.setState({password: text})} />
-            </Item>
           </Form>
-          <TouchableOpacity onPress={() => this.onRegister(this.state)} style={{ height: 44, backgroundColor: '#57DBE9', marginTop: 20, borderRadius: 24, justifyContent: 'center', alignItems: 'center' }}><Text style={{ color: 'white', fontSize: 20 }}>Sign up</Text></TouchableOpacity>
+          <TouchableOpacity onPress={() => this.onUpdateUser(this.state)} style={{ height: 44, backgroundColor: '#57DBE9', marginTop: 20, borderRadius: 24, justifyContent: 'center', alignItems: 'center' }}><Text style={{ color: 'white', fontSize: 20 }}>Update User</Text></TouchableOpacity>
         </Content>
       </View>
     )
   }
 }
 
-export default Register
+export default UpdateUser
