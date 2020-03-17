@@ -30,7 +30,7 @@ class HotelDetail extends Component {
   static navigationOptions = {
     title: 'Favehotel Padjajaran Bogor',
     headerStyle: {
-      backgroundColor: '#f0f0f0',
+      backgroundColor: '#57DBE9',
     },
     headerTintColor: '#fff',
     headerTitleStyle: {

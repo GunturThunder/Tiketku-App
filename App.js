@@ -54,12 +54,12 @@ const homeNavigator = createStackNavigator({
   },
   HotelDetail: HotelDetailScreen,
   BookingList: BookingListScreen,
-  // User: {
-  //   screen: UserScreen,
-  //   navigationOptions: {
-  //     header: null,
-  //   },
-  // },
+  User: {
+    screen: UserScreen,
+    navigationOptions: {
+      header: null,
+    },
+  },
 });
 
 const AppNavigator = createSwitchNavigator({
